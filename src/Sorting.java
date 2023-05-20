@@ -19,6 +19,27 @@ public class Sorting {
         }
     }
 
+    /*
+        Sắp xếp chèn:
+
+     */
+    public static void insertionSort(int[] a) {
+        int n = a.length;
+        for (int i = 1; i < n; i++) {
+//            Chèn a[i] vào dãy 0 -> i-1
+            int key = a[i];
+//           Phần tử đầu tiên
+            int j = i - 1;
+
+            while (j >= 0 && a[j] > key) {
+                a[j + 1] = a[j];
+                j--;
+            }
+//            Phần tử cuối cùng
+            a[j + 1] = a[i];
+        }
+    }
+
     public static void printArray(int no, int[] a) {
         System.out.printf("%d: ", no);
         for (int i = 0; i < a.length; i++) {
