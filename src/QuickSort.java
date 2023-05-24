@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class QuickSort {
     public static void quickSort(int[] a, int left, int right) {
 //        Dieu kien dung
@@ -7,7 +9,7 @@ public class QuickSort {
 //        B2: Phan bo lai mang theo khoa
         int k = partition(a, left, right, key);
 //        B3: Chia doi mang => lap lai
-        quickSort(a, left, key - 1);
+        quickSort(a, left, k - 1);
         quickSort(a, k, right);
     }
 
@@ -35,5 +37,6 @@ public class QuickSort {
     public static void main(String[] args) {
         int[] a = {6, 7, 8, 5, 4, 1, 2, 3};
         quickSort(a, 0, a.length - 1);
+        System.out.println(Arrays.toString(a));
     }
 }
